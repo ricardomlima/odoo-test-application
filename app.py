@@ -42,7 +42,7 @@ class TaskManager():
             return name
 
         tasks = [map_task(task)
-                 for task in glob.glob("tasks/*.py")]
+                 for task in glob.glob("tasks/[!_]*.py")]
 
         return tasks
 
