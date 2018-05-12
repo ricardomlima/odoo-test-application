@@ -33,8 +33,17 @@ class TaskManager():
         all available tasks
         """
 
-        tasks = [(task[:-3].replace('/', '.'), 1)
+        def map_task(task):
+            pieces = task[:-3].split('/')
+            name = pieces[-1]
+
+            return (name, )
+
+        tasks = [map_task(task)
                  for task in glob.glob("tasks/*.py")]
 
-    def run(self, parameters):
+        return tasks
+
+
+    def run(self):
         pass
